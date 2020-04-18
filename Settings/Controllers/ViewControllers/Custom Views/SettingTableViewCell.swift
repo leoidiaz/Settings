@@ -8,8 +8,14 @@
 
 import UIKit
 
+/**
+ The protocol we will use to handle the update of the cell when `settingSwitch` has been toggled
+ - class: This protocol needs to interact with class level objects
+ */
+
 protocol SettingCellDelegate: class {
     // Step 1 Declare Protocol
+    /// Protocol method
     func settingSwitchToggled(for cell: SettingTableViewCell)
 }
 
@@ -20,7 +26,13 @@ class SettingTableViewCell: UITableViewCell {
     @IBOutlet weak var settingSwitch: UISwitch!
     
     // Step 2 Create the delegate
-    
+    /**
+     The delegate or *intern* for the protocol `SettingCellDelegate`
+     
+     - weak: We mark this method as weak to not create  a retain cycle
+     - optional; We do not want  to set the value of the delegate here
+     
+     */
     weak var delegate: SettingCellDelegate?
     
     func updateViews(with setting: Setting) {

@@ -10,6 +10,14 @@ import UIKit
 
 class Setting {
     
+/**
+ creates our setting Object - 'Model'
+    - Properties
+        - name the String identifier for the setting
+        - Icon: The UIImage that matches the setting
+        - isOn: Bool the designate whether the settings is on or not
+*/
+    
     let name: String
     let icon: UIImage
     var isOn: Bool
