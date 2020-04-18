@@ -9,16 +9,23 @@
 import UIKit
 
 class SettingTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    //MARK: - Outlets
+    @IBOutlet weak var settingNameLabel: UILabel!
+    @IBOutlet weak var settingImageView: UIImageView!
+    @IBOutlet weak var settingSwitch: UISwitch!
+    
+    
+    func updateViews(with setting: Setting) {
+        settingNameLabel.text = setting.name
+        settingImageView.image = setting.icon
+        settingSwitch.isOn = setting.isOn
+        // Ternary Operator
+        backgroundColor = setting.isOn ? .cyan : .white
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    //MARK: - Action
+    @IBAction func settingSwitchToggled(_ sender: Any) {
     }
-
+    
 }
