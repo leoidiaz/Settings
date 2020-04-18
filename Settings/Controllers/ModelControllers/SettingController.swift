@@ -10,7 +10,7 @@ import Foundation
 
 class SettingController {
     
-    let setting: [Setting] = {
+    static let setting: [Setting] = {
         let music = Setting(name: "Music", icon: #imageLiteral(resourceName: "appleMusic"), isON: false)
         let appStore = Setting(name: "App Store", icon: #imageLiteral(resourceName: "appStore"), isON: false)
         let iBooks = Setting(name: "iBooks", icon: #imageLiteral(resourceName: "appleBooks"), isON: true)
